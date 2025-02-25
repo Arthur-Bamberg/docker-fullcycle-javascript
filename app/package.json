@@ -1,0 +1,24 @@
+{
+  "name": "docker-fullcycle-javascript",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/Arthur-Bamberg/docker-fullcycle-javascript#readme",
+  "bugs": {
+    "url": "https://github.com/Arthur-Bamberg/docker-fullcycle-javascript/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arthur-Bamberg/docker-fullcycle-javascript.git"
+  },
+  "license": "ISC",
+  "author": "Arthur-Bamberg",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "mysql2": "^3.12.0"
+  }
+}
