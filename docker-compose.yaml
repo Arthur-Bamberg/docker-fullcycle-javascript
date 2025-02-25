@@ -10,6 +10,11 @@ services:
       - ./database:/docker-entrypoint-initdb.d
     environment:
       MYSQL_ROOT_PASSWORD: root
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p$$MYSQL_ROOT_PASSWORD"]
+      interval: 5s
+      timeout: 10s
+      retries: 3
 
   app:
     container_name: app
@@ -22,7 +27,8 @@ services:
     networks:
       - app-network
     depends_on:
-      - mysql
+      mysql:
+        condition: service_healthy
 
   nginx-fc:
     container_name: nginx-fc
