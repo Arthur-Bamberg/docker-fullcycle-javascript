@@ -16,6 +16,9 @@ services:
     build:
       context: ./app
       dockerfile: Dockerfile
+    volumes:
+      - ./app:/app
+      - /app/node_modules
     networks:
       - app-network
     depends_on:
@@ -33,7 +36,6 @@ services:
       - 8080:80
     depends_on:
       - app
-
 
 volumes:
   mysql_data:
